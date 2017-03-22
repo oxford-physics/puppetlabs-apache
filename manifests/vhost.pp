@@ -899,7 +899,7 @@ define apache::vhost(
   if ( $scriptalias or $scriptaliases != [] ) {
     concat::fragment { "${name}-scriptalias":
       target  => "${priority_real}${filename}.conf",
-      order   => 200,
+      order   => 18,
       content => template('apache/vhost/_scriptalias.erb'),
     }
   }
